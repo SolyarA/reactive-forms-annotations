@@ -1,0 +1,40 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+<div [formGroup]="form">
+  <div>
+    <input type="radio" id="business" [value]="0" formControlName="type">
+    <label for="business">Business</label>
+  </div>
+  <div>
+    <input type="radio" id="private" [value]="1" formControlName="type">
+    <label for="private">Private</label>
+  </div>
+  <input type="text" placeholder="businessName"
+         formControlName="businessName">
+  <input type="text" placeholder="fullName" formControlName="fullName">
+  <input type="number" formControlName="age">
+
+  <ng-container formGroupName="address">
+      <input placeholder="street"
+             formControlName="street">
+      <input placeholder="city"
+             formControlName="city">
+  </ng-container>
+
+  <button type="button" (click)="addCard()">Add</button>
+
+  <ng-container formArrayName="cards" *ngFor="let card of form.cards;">
+    <div [formGroup]="card">
+      <input placeholder="cardNumber"
+             formControlName="cardNumber">
+      <input placeholder="expiry"
+             formControlName="expiry">
+      <input type="number"  placeholder="cvv" formControlName="cvv">
+    </div>
+  </ng-container>
+</div>
+
