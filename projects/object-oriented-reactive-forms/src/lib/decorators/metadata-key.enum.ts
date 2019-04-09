@@ -2,7 +2,7 @@ export enum MetadataKey {
   AbstractControlValidators = 'metadata:abstractControlValidators',
   AbstractControlBehaviors = 'metadata:abstractControlBehaviors',
   AbstractControlType = 'metadata:abstractControlType',
-  FormGroupTypeConstructor = 'metadata:formGroupTypeConstructor',
+  DesingType = 'design:type',
   AbstractControlPrefix = '_oorf',
 }
 

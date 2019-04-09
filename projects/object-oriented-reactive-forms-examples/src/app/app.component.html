@@ -1,40 +1,101 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-</div>
-<div [formGroup]="form">
-  <div>
-    <input type="radio" id="business" [value]="0" formControlName="type">
-    <label for="business">Business</label>
-  </div>
-  <div>
-    <input type="radio" id="private" [value]="1" formControlName="type">
-    <label for="private">Private</label>
-  </div>
-  <input type="text" placeholder="businessName"
-         formControlName="businessName">
-  <input type="text" placeholder="fullName" formControlName="fullName">
-  <input type="number" formControlName="age">
-
-  <ng-container formGroupName="address">
-      <input placeholder="street"
-             formControlName="street">
-      <input placeholder="city"
-             formControlName="city">
-  </ng-container>
-
-  <button type="button" (click)="addCard()">Add</button>
-
-  <ng-container formArrayName="cards" *ngFor="let card of form.cards;">
-    <div [formGroup]="card">
-      <input placeholder="cardNumber"
-             formControlName="cardNumber">
-      <input placeholder="expiry"
-             formControlName="expiry">
-      <input type="number"  placeholder="cvv" formControlName="cvv">
+<div fxLayout="row" fxLayoutAlign="center none">
+  <div fxLayout="column" fxLayoutAlign="space-between none" [formGroup]="form" (ngSubmit)="submit()" fxFlex="50%">
+    <div fxLayout="row" fxLayoutAlign="center none">
+      <mat-button-toggle-group formControlName="type">
+        <mat-button-toggle [value]="0">Business</mat-button-toggle>
+        <mat-button-toggle [value]="1">Private</mat-button-toggle>
+      </mat-button-toggle-group>
     </div>
-  </ng-container>
-</div>
+    <div fxLayout="row" fxLayoutAlign="space-between">
+      <mat-form-field fxFlex="48%">
+        <input matInput type="text" placeholder="Business name" formControlName="businessName">
+      </mat-form-field>
+      <mat-form-field fxFlex="48%">
+        <input matInput type="text" placeholder="VAT number" formControlName="vatNumber">
+      </mat-form-field>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="space-between">
+      <mat-form-field fxFlex="48%">
+        <input matInput type="text" placeholder="Full name" formControlName="fullName">
+      </mat-form-field>
+      <mat-form-field fxFlex="48%">
+        <input matInput [matDatepicker]="picker" placeholder="Date of birth" formControlName="dateOfBirth">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div fxLayout="row">
+      <mat-form-field fxFlex="48%">
+        <input matInput type="text" placeholder="Phone number" formControlName="phoneNumber">
+      </mat-form-field>
+    </div>
 
+
+    <mat-card formGroupName="address">
+      <mat-card-title>Address</mat-card-title>
+      <div fxLayout="row" fxLayoutAlign="space-between">
+        <mat-form-field fxFlex="48%">
+          <input matInput placeholder="Address 1" formControlName="addressLine1">
+        </mat-form-field>
+        <mat-form-field fxFlex="48%">
+          <input matInput placeholder="Address 2" formControlName="addressLine2">
+        </mat-form-field>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="space-between">
+        <mat-form-field fxFlex="48%">
+          <input matInput placeholder="City" formControlName="city">
+        </mat-form-field>
+        <mat-form-field fxFlex="48%">
+          <input matInput placeholder="Region" formControlName="region">
+        </mat-form-field>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="space-between">
+        <mat-form-field fxFlex="65%">
+          <input matInput placeholder="Country" formControlName="country">
+        </mat-form-field>
+        <mat-form-field fxFlex="25%">
+          <input matInput placeholder="Post code" formControlName="postCode">
+        </mat-form-field>
+      </div>
+    </mat-card>
+
+    <div fxLayout="row" fxLayoutAlign="space-between">
+      <h2>Cards</h2>
+      <button type="button" color="primary" (click)="addCard()" mat-fab>Add</button>
+    </div>
+    <div fxLayout="row wrap" fxLayoutAlign="space-between" formArrayName="cards">
+      <mat-card [formGroup]="card" fxFlex="48%" *ngFor="let card of form.cards;let i = index">
+        <mat-card-content>
+          <div fxLayout="row">
+            <mat-form-field fxFlex="100%">
+              <input matInput placeholder="Card number" formControlName="cardNumber">
+            </mat-form-field>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between">
+            <mat-form-field fxFlex="48%">
+              <input matInput [matDatepicker]="dp" placeholder="Expiry" formControlName="expiry">
+              <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+              <mat-datepicker #dp
+                              startView="multi-year"
+                              (yearSelected)="chosenYearHandler($event, i)"
+                              (monthSelected)="chosenMonthHandler($event, dp, i)">
+              </mat-datepicker>
+            </mat-form-field>
+            <mat-form-field fxFlex="48%">
+              <input matInput placeholder="CVV" formControlName="cvv">
+            </mat-form-field>
+          </div>
+
+        </mat-card-content>
+        <mat-card-footer align="end">
+          <button mat-button color="warn" (click)="removeCard(i)" type="button">Remove</button>
+        </mat-card-footer>
+      </mat-card>
+
+    </div>
+    <button mat-raised-button type="submit" (click)="submit()">Submit</button>
+    <div fxLayout="row">
+      <pre>{{ form.value | json }}</pre>
+    </div>
+  </div>
+</div>

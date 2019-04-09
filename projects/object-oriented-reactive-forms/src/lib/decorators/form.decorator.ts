@@ -1,5 +1,3 @@
-import { AbstractControl } from '@angular/forms';
-import { FormGroup } from '../form-group.class';
 import { AbstractControlType, MetadataKey } from './metadata-key.enum';
 import { FormControl } from '../form-control.class';
 import { FormArray } from '../form-array.class';
@@ -12,12 +10,12 @@ export function form(target: any) {
       return constructor.apply(this, args);
     };
     c.prototype = constructor.prototype;
+
     return new c();
   }
 
   const f: any = (...args) => {
-
-    const fromGroup = construct(target, args) as FormGroup;
+    const fromGroup = construct(target, args);
 
     for (const propertyName of Object.keys(target.prototype)) {
       if (!fromGroup[propertyName]) {
@@ -32,7 +30,7 @@ export function form(target: any) {
             fromGroup[MetadataKey.AbstractControlPrefix + propertyName] = new FormControl(null, controlValidators, null, controlBehaviors);
             break;
           case AbstractControlType.FormGroup:
-            const type = Reflect.getMetadata(MetadataKey.FormGroupTypeConstructor, fromGroup, propertyName);
+            const type = Reflect.getMetadata(MetadataKey.DesingType, fromGroup, propertyName);
             fromGroup[MetadataKey.AbstractControlPrefix + propertyName] = new type();
             break;
           default:

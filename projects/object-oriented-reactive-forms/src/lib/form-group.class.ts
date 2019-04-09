@@ -8,12 +8,11 @@ import { BehaviorFn } from './behaviors';
 export class FormGroup extends angularForms.FormGroup {
   behaviors: BehaviorFn;
 
-  constructor(controls: { [key: string]: AbstractControl; },
-              validatorOrOpts?: ValidatorFn | ValidatorFn[] | AbstractControlOptions | null,
+  constructor(validatorOrOpts?: ValidatorFn | ValidatorFn[] | AbstractControlOptions | null,
               asyncValidator?: AsyncValidatorFn | AsyncValidatorFn[] | null,
               behaviors?: BehaviorFn | BehaviorFn[] | null
   ) {
-    super(controls, validatorOrOpts, asyncValidator);
+    super({}, validatorOrOpts, asyncValidator);
     this.behaviors = this._reduceBehaviors(behaviors);
   }
 

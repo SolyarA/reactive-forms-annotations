@@ -21,6 +21,10 @@ export class FormArray<T extends AbstractControl> extends angularForms.FormArray
     }
   }
 
+  public at(index: number): T {
+    return super.at(index) as T;
+  }
+
   setBehaviors(behaviors: BehaviorFn | BehaviorFn[] | null) {
     this.behaviors = this._reduceBehaviors(behaviors);
   }
