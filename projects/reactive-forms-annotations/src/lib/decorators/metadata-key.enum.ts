@@ -3,7 +3,7 @@ export enum MetadataKey {
   AbstractControlBehaviors = 'metadata:abstractControlBehaviors',
   AbstractControlType = 'metadata:abstractControlType',
   DesingType = 'design:type',
-  AbstractControlPrefix = '_oorf',
+  AbstractControlPrefix = '_rfa',
 }
 
 export enum AbstractControlType {
