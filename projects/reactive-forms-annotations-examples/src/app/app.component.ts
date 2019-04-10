@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Card, Client, ClientType } from './client.form';
-import { TypeString } from '../../../object-oriented-reactive-forms/src';
+import { TypeString } from '../../../reactive-forms-annotations/src';
 
 import { MatDatepicker } from '@angular/material';
 import { Moment } from 'moment';

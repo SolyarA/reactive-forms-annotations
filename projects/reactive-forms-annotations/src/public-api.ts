@@ -1,5 +1,5 @@
 /*
- * Public API Surface of object-oriented-reactive-forms
+ * Public API Surface of reactive-forms-annotations
  */
 
 export * from './lib/decorators/form-control.decorator';

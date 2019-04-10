@@ -20,11 +20,11 @@
       "dom"
     ],
     "paths": {
-      "@object-oriented-reactive-forms": [
-        "projects/reactive-form-decorators/src"
+      "@reactive-forms-annotations": [
+        "projects/reactive-forms-annotations/src"
       ],
-      "@object-oriented-reactive-forms/*": [
-        "projects/reactive-form-decorators/src/*"
+      "@reactive-forms-annotations/*": [
+        "projects/reactive-forms-annotations/src/*"
       ]
     }
   }

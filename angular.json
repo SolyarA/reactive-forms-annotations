@@ -3,33 +3,33 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "object-oriented-reactive-forms": {
-      "root": "projects/object-oriented-reactive-forms",
-      "sourceRoot": "projects/object-oriented-reactive-forms/src",
+    "reactive-forms-annotations": {
+      "root": "projects/reactive-forms-annotations",
+      "sourceRoot": "projects/reactive-forms-annotations/src",
       "projectType": "library",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "projects/object-oriented-reactive-forms/tsconfig.lib.json",
-            "project": "projects/object-oriented-reactive-forms/ng-package.json"
+            "tsConfig": "projects/reactive-forms-annotations/tsconfig.lib.json",
+            "project": "projects/reactive-forms-annotations/ng-package.json"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/object-oriented-reactive-forms/src/test.ts",
-            "tsConfig": "projects/object-oriented-reactive-forms/tsconfig.spec.json",
-            "karmaConfig": "projects/object-oriented-reactive-forms/karma.conf.js"
+            "main": "projects/reactive-forms-annotations/src/test.ts",
+            "tsConfig": "projects/reactive-forms-annotations/tsconfig.spec.json",
+            "karmaConfig": "projects/reactive-forms-annotations/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/object-oriented-reactive-forms/tsconfig.lib.json",
-              "projects/object-oriented-reactive-forms/tsconfig.spec.json"
+              "projects/reactive-forms-annotations/tsconfig.lib.json",
+              "projects/reactive-forms-annotations/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -38,9 +38,9 @@
         }
       }
     },
-    "object-oriented-reactive-forms-examples": {
-      "root": "projects/object-oriented-reactive-forms-examples/",
-      "sourceRoot": "projects/object-oriented-reactive-forms-examples/src",
+    "reactive-forms-annotations-examples": {
+      "root": "projects/reactive-forms-annotations-examples/",
+      "sourceRoot": "projects/reactive-forms-annotations-examples/src",
       "projectType": "application",
       "prefix": "app",
       "schematics": {},
@@ -48,17 +48,17 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/object-oriented-reactive-forms-examples",
-            "index": "projects/object-oriented-reactive-forms-examples/src/index.html",
-            "main": "projects/object-oriented-reactive-forms-examples/src/main.ts",
-            "polyfills": "projects/object-oriented-reactive-forms-examples/src/polyfills.ts",
-            "tsConfig": "projects/object-oriented-reactive-forms-examples/tsconfig.app.json",
+            "outputPath": "dist/reactive-forms-annotations-examples",
+            "index": "projects/reactive-forms-annotations-examples/src/index.html",
+            "main": "projects/reactive-forms-annotations-examples/src/main.ts",
+            "polyfills": "projects/reactive-forms-annotations-examples/src/polyfills.ts",
+            "tsConfig": "projects/reactive-forms-annotations-examples/tsconfig.app.json",
             "assets": [
-              "projects/object-oriented-reactive-forms-examples/src/favicon.ico",
-              "projects/object-oriented-reactive-forms-examples/src/assets"
+              "projects/reactive-forms-annotations-examples/src/favicon.ico",
+              "projects/reactive-forms-annotations-examples/src/assets"
             ],
             "styles": [
-              "projects/object-oriented-reactive-forms-examples/src/styles.css"
+              "projects/reactive-forms-annotations-examples/src/styles.css"
             ],
             "scripts": [],
             "es5BrowserSupport": true
@@ -67,8 +67,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "projects/object-oriented-reactive-forms-examples/src/environments/environment.ts",
-                  "with": "projects/object-oriented-reactive-forms-examples/src/environments/environment.prod.ts"
+                  "replace": "projects/reactive-forms-annotations-examples/src/environments/environment.ts",
+                  "with": "projects/reactive-forms-annotations-examples/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -93,34 +93,34 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "object-oriented-reactive-forms-examples:build"
+            "browserTarget": "reactive-forms-annotations-examples:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "object-oriented-reactive-forms-examples:build:production"
+              "browserTarget": "reactive-forms-annotations-examples:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "object-oriented-reactive-forms-examples:build"
+            "browserTarget": "reactive-forms-annotations-examples:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/object-oriented-reactive-forms-examples/src/test.ts",
-            "polyfills": "projects/object-oriented-reactive-forms-examples/src/polyfills.ts",
-            "tsConfig": "projects/object-oriented-reactive-forms-examples/tsconfig.spec.json",
-            "karmaConfig": "projects/object-oriented-reactive-forms-examples/karma.conf.js",
+            "main": "projects/reactive-forms-annotations-examples/src/test.ts",
+            "polyfills": "projects/reactive-forms-annotations-examples/src/polyfills.ts",
+            "tsConfig": "projects/reactive-forms-annotations-examples/tsconfig.spec.json",
+            "karmaConfig": "projects/reactive-forms-annotations-examples/karma.conf.js",
             "styles": [
-              "projects/object-oriented-reactive-forms-examples/src/styles.css"
+              "projects/reactive-forms-annotations-examples/src/styles.css"
             ],
             "scripts": [],
             "assets": [
-              "projects/object-oriented-reactive-forms-examples/src/favicon.ico",
-              "projects/object-oriented-reactive-forms-examples/src/assets"
+              "projects/reactive-forms-annotations-examples/src/favicon.ico",
+              "projects/reactive-forms-annotations-examples/src/assets"
             ]
           }
         },
@@ -128,8 +128,8 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/object-oriented-reactive-forms-examples/tsconfig.app.json",
-              "projects/object-oriented-reactive-forms-examples/tsconfig.spec.json"
+              "projects/reactive-forms-annotations-examples/tsconfig.app.json",
+              "projects/reactive-forms-annotations-examples/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -139,5 +139,5 @@
       }
     }
   },
-  "defaultProject": "object-oriented-reactive-forms"
+  "defaultProject": "reactive-forms-annotations-examples"
 }

@@ -8,7 +8,7 @@ import {
   TypeArray,
   TypeNumber,
   TypeString
-} from '../../../object-oriented-reactive-forms/src';
+} from '../../../reactive-forms-annotations/src';
 import * as moment from 'moment';
 import { Moment } from 'moment';
 
