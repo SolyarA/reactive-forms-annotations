@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --base-href /reactive-forms-annotations-examples/ --prod",
+    "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "build-lib": "ng build reactive-forms-annotations",
