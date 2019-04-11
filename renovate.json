@@ -1,0 +1,56 @@
+{
+  "extends": [
+    "config:base"
+  ],
+  "baseBranch": "devel",
+  "packageRules": [
+    {
+      "packagePatterns": [
+        "reactive-forms-annotations"
+      ],
+      "rangeStrategy": "replace"
+    },
+    {
+      "packagePatterns": [
+        "reactive-forms-annotations"
+      ],
+      "depTypeList": [
+        "devDependencies"
+      ],
+      "rangeStrategy": "pin"
+    },
+    {
+      "packagePatterns": [
+        "reactive-forms-annotations"
+      ],
+      "depTypeList": [
+        "peerDependencies"
+      ],
+      "rangeStrategy": "widen"
+    },
+    {
+      "packagePatterns": [
+        "reactive-forms-annotations-examples"
+      ],
+      "rangeStrategy": "replace"
+    },
+    {
+      "packagePatterns": [
+        "reactive-forms-annotations-examples"
+      ],
+      "depTypeList": [
+        "devDependencies"
+      ],
+      "rangeStrategy": "pin"
+    },
+    {
+      "packagePatterns": [
+        "reactive-forms-annotations-examples"
+      ],
+      "depTypeList": [
+        "peerDependencies"
+      ],
+      "rangeStrategy": "widen"
+    }
+  ]
+}
