@@ -8,7 +8,8 @@
       "packagePatterns": [
         "reactive-forms-annotations"
       ],
-      "rangeStrategy": "replace"
+      "rangeStrategy": "replace",
+      "semanticCommitType": "chore"
     },
     {
       "packagePatterns": [
@@ -17,7 +18,8 @@
       "depTypeList": [
         "devDependencies"
       ],
-      "rangeStrategy": "pin"
+      "rangeStrategy": "pin",
+      "semanticCommitType": "chore"
     },
     {
       "packagePatterns": [
@@ -26,13 +28,15 @@
       "depTypeList": [
         "peerDependencies"
       ],
-      "rangeStrategy": "widen"
+      "rangeStrategy": "widen",
+      "semanticCommitType": "chore"
     },
     {
       "packagePatterns": [
         "reactive-forms-annotations-examples"
       ],
-      "rangeStrategy": "replace"
+      "rangeStrategy": "replace",
+      "semanticCommitType": "chore"
     },
     {
       "packagePatterns": [
@@ -41,7 +45,8 @@
       "depTypeList": [
         "devDependencies"
       ],
-      "rangeStrategy": "pin"
+      "rangeStrategy": "pin",
+      "semanticCommitType": "chore"
     },
     {
       "packagePatterns": [
@@ -50,7 +55,8 @@
       "depTypeList": [
         "peerDependencies"
       ],
-      "rangeStrategy": "widen"
+      "rangeStrategy": "widen",
+      "semanticCommitType": "chore"
     }
   ]
 }
