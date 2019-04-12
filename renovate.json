@@ -16,16 +16,6 @@
         "reactive-forms-annotations"
       ],
       "depTypeList": [
-        "devDependencies"
-      ],
-      "rangeStrategy": "pin",
-      "semanticCommitType": "chore"
-    },
-    {
-      "packagePatterns": [
-        "reactive-forms-annotations"
-      ],
-      "depTypeList": [
         "peerDependencies"
       ],
       "rangeStrategy": "widen",
