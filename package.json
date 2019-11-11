@@ -55,7 +55,7 @@
     "karma-coverage-istanbul-reporter": "2.0.5",
     "karma-jasmine": "2.0.1",
     "karma-jasmine-html-reporter": "1.4.0",
-    "ng-packagr": "5.1.0",
+    "ng-packagr": "5.7.1",
     "protractor": "5.4.2",
     "semantic-release": "15.13.3",
     "travis-deploy-once": "5.0.11",
